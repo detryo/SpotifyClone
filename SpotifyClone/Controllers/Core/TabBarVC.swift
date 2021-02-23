@@ -16,7 +16,7 @@ class TabBarVC: UITabBarController {
         let vc2 = SearchVC()
         let vc3 = LibraryVC()
         
-        vc.title = "Browse"
+        vc.title = "Home"
         vc2.title = "Search"
         vc3.title = "Library"
         
