@@ -48,6 +48,112 @@ final class APICaller {
         }
     }
     
+    public func getNewReleases(complition: @escaping ((Result<NewReleasesResponse, Error>)) -> Void) {
+        
+        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/new-releases?limit=50"), type: .GET) { request in
+            
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                
+                guard let data = data, error == nil else {
+                    complition(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(NewReleasesResponse.self, from: data)
+                    print("No New Releases Response: \(result)")
+                    complition(.success(result))
+                    
+                } catch {
+                    complition(.failure(error))
+                    print("New Release failed: \(error.localizedDescription)")
+                    
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getFeaturedFlaylists(completion: @escaping ((Result<FeaturePlayListResponse, Error>) -> Void)) {
+        
+        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/featured-playlists?limit=2"), type: .GET) { request in
+            
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(FeaturePlayListResponse.self, from: data)
+                    print("Success Feature Play List Response: \(result)")
+                    completion(.success(result))
+                    
+                } catch {
+                    completion(.failure(error))
+                    print("New Release failed: \(error.localizedDescription)")
+                    
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getRecommendedGenres(completion: @escaping ((Result<RecommendedGenresResponse, Error>) -> Void)) {
+        
+        createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations/available-genre-seeds"), type: .GET) { request in
+            
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            
+                            guard let data = data, error == nil else {
+                                completion(.failure(APIError.failedToGetData))
+                                return
+                            }
+            
+                            do {
+                                let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
+                                print("Success Get Recommendations: \(result)")
+                                completion(.success(result))
+            
+                            } catch {
+                                completion(.failure(error))
+                                print("New Release failed: \(error.localizedDescription)")
+            
+                            }
+                        }
+                        task.resume()
+        }
+    }
+    
+    public func getRecommendations(genres:Set<String>, completion: @escaping ((Result<RecommendationsResponse, Error>) -> Void)) {
+        
+        let seeds = genres.joined(separator: ",")
+
+        createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations?limit=40%seed_genres=\(seeds)"), type: .GET) { request in
+
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+
+                do {
+                    let result = try JSONDecoder().decode(RecommendationsResponse.self, from: data)
+                    print("Success Get Recommendations: \(result)")
+                    completion(.success(result))
+
+                } catch {
+                    completion(.failure(error))
+                    print("New Release failed: \(error.localizedDescription)")
+
+                }
+            }
+            task.resume()
+        }
+    }
+    
     enum HTTPMethod: String {
         case GET
         case POST
