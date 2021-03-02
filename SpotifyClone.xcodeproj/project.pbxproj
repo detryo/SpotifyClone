@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363D85BC25ED0CC7002A6CA0 /* NewReleaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D85BB25ED0CC7002A6CA0 /* NewReleaseCell.swift */; };
+		363D85C025ED0D12002A6CA0 /* FeaturePlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D85BF25ED0D12002A6CA0 /* FeaturePlayListCell.swift */; };
+		363D85C325ED0D50002A6CA0 /* RecommendedTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D85C225ED0D50002A6CA0 /* RecommendedTrackCell.swift */; };
 		3647135425DD26A4003E4DEE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647135325DD26A4003E4DEE /* TabBarVC.swift */; };
 		3647135825DD273C003E4DEE /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647135725DD273C003E4DEE /* SearchVC.swift */; };
 		3647135B25DD27B8003E4DEE /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647135A25DD27B7003E4DEE /* LibraryVC.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		363D85BB25ED0CC7002A6CA0 /* NewReleaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCell.swift; sourceTree = "<group>"; };
+		363D85BF25ED0D12002A6CA0 /* FeaturePlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePlayListCell.swift; sourceTree = "<group>"; };
+		363D85C225ED0D50002A6CA0 /* RecommendedTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCell.swift; sourceTree = "<group>"; };
 		3647135325DD26A4003E4DEE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		3647135725DD273C003E4DEE /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		3647135A25DD27B7003E4DEE /* LibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
@@ -90,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		363D85BA25ED0C20002A6CA0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				363D85BB25ED0CC7002A6CA0 /* NewReleaseCell.swift */,
+				363D85BF25ED0D12002A6CA0 /* FeaturePlayListCell.swift */,
+				363D85C225ED0D50002A6CA0 /* RecommendedTrackCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		3647135D25DD2800003E4DEE /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 		36E9AC4525DD1AAD003B18AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				363D85BA25ED0C20002A6CA0 /* Home */,
 				36E9AC3925DD1A68003B18AF /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -345,7 +362,9 @@
 				36E9AC3325DD1A67003B18AF /* HomeVC.swift in Sources */,
 				3647135825DD273C003E4DEE /* SearchVC.swift in Sources */,
 				3647135B25DD27B8003E4DEE /* LibraryVC.swift in Sources */,
+				363D85C325ED0D50002A6CA0 /* RecommendedTrackCell.swift in Sources */,
 				366D9FB925E7BCA200770CD9 /* FeaturePlayListResponse.swift in Sources */,
+				363D85C025ED0D12002A6CA0 /* FeaturePlayListCell.swift in Sources */,
 				36E9AC2F25DD1A67003B18AF /* AppDelegate.swift in Sources */,
 				3647137D25DD30C2003E4DEE /* HapticsManager.swift in Sources */,
 				3647137425DD2EA7003E4DEE /* SearchResultsVC.swift in Sources */,
@@ -361,6 +380,7 @@
 				3647138925DD3288003E4DEE /* UserProfile.swift in Sources */,
 				367E46D725DEB88D00EC968C /* Extensions.swift in Sources */,
 				3647135425DD26A4003E4DEE /* TabBarVC.swift in Sources */,
+				363D85BC25ED0CC7002A6CA0 /* NewReleaseCell.swift in Sources */,
 				3647138625DD3258003E4DEE /* Artist.swift in Sources */,
 				36E9AC3125DD1A67003B18AF /* SceneDelegate.swift in Sources */,
 				3647136525DD28E5003E4DEE /* WelcomeVC.swift in Sources */,
